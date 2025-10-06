@@ -1,0 +1,5 @@
+[workspace]
+members = [
+    "src/sol_icp_poc_backend"
+]
+resolver = "2"

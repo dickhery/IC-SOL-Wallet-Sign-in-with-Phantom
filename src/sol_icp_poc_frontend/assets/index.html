@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IC-SOL Wallet</title>
+  <style>
+    #alerts { margin-top: 8px; font-family: sans-serif; }
+    .ok { color: #0a7f2e; }
+    .warn { color: #a66a00; }
+    .err { color: #b00020; }
+    .muted { color: #666; }
+    button:disabled { opacity: 0.6; cursor: not-allowed; }
+    #latest-tx { margin-top: 8px; font-family: sans-serif; padding: 8px; border: 1px solid #ddd; border-radius: 4px; }
+    #latest-tx.ok { color: #0a7f2e; border-color: #0a7f2e; }
+    #latest-tx.warn { color: #a66a00; border-color: #a66a00; }
+    #latest-tx.err { color: #b00020; border-color: #b00020; }
+    #latest-tx.muted { color: #666; border-color: #ccc; }
+  </style>
+</head>
+<body>
+  <h1>IC-SOL Wallet</h1>
+
+  <h2>Auth Mode</h2>
+  <p>Select authentication method. Switching will disconnect the other.</p>
+  <button id="mode_ii">Use Internet Identity</button>
+  <button id="mode_phantom">Use Phantom</button>
+  <p id="mode_status"></p>
+
+  <hr>
+
+  <div id="ii_block" style="display:none;">
+    <h2>Internet Identity</h2>
+    <button id="ii_login">Login with Internet Identity</button>
+    <button id="ii_logout">Logout II</button>
+    <p id="ii_status"></p>
+    <p id="pid"></p>
+  </div>
+
+  <div id="phantom_block" style="display:none;">
+    <h2>Phantom</h2>
+    <button id="connect">Connect Phantom</button>
+    <button id="logout">Logout Phantom</button>
+    <p id="status"></p>
+    <p id="pubkey"></p>
+  </div>
+
+  <h2>ICP</h2>
+  <p id="deposit"></p>
+  <button id="copy_icp">Copy ICP Addr</button>
+  <p id="balance"></p>
+  <button id="refresh_icp">Refresh ICP Balance</button>
+  <input id="to" placeholder="To Address (Account ID Only!)" />
+  <input id="amount" placeholder="Amount (ICP)" type="number" step="0.00000001" />
+  <button id="send">Send ICP</button>
+
+  <hr>
+  <h2>Solana</h2>
+  <p>Note: Sending SOL requires at least 0.0003 ICP in your wallet to cover the service fee (0.0002 ICP) + ledger fee (0.0001 ICP).</p>
+  <p id="sol_deposit"></p>
+  <button id="copy_sol">Copy SOL Addr</button>
+  <p id="sol_balance"></p>
+  <button id="get_sol">Refresh SOL Balance</button>
+  <input id="to_sol" placeholder="To Solana Address (base58)" />
+  <input id="amount_sol" placeholder="Amount (SOL)" type="number" step="0.000000001" />
+  <button id="send_sol">Send SOL</button>
+
+  <h3>Latest Transaction</h3>
+  <div id="latest-tx" class="muted">No transactions yet.</div>
+
+  <div id="alerts"></div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>

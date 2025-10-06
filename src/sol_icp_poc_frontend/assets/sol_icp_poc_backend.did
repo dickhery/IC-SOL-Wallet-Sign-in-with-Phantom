@@ -1,0 +1,22 @@
+type Result = variant { Ok : nat64; Err : text };
+type Result_1 = variant { Ok : text; Err : text };
+service : {
+  get_balance : (text) -> (Result);
+  get_balance_ii : () -> (Result);
+  get_deposit_address : (text) -> (text) query;
+  get_deposit_address_ii : () -> (Result_1);
+  get_nonce : (text) -> (Result);
+  get_nonce_ii : () -> (Result);
+  get_pid : (text) -> (text) query;
+  get_sol_balance : (text) -> (Result);
+  get_sol_balance_ii : () -> (Result);
+  get_sol_deposit_address : (text) -> (Result_1);
+  get_sol_deposit_address_ii : () -> (Result_1);
+  link_sol_pubkey : (text, blob) -> (text);
+  transfer : (text, nat64, text, blob, nat64) -> (text);
+  transfer_ii : (text, nat64) -> (text);
+  transfer_sol : (text, nat64, text, blob, nat64) -> (text);
+  transfer_sol_ii : (text, nat64) -> (text);
+  unlink_sol_pubkey : () -> (text);
+  whoami : () -> (text) query;
+}

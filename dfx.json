@@ -1,0 +1,22 @@
+{
+  "canisters": {
+    "sol_icp_poc_backend": {
+      "candid": "src/sol_icp_poc_backend/sol_icp_poc_backend.did",
+      "package": "sol_icp_poc_backend",
+      "type": "rust",
+      "crate": "sol_icp_poc_backend"
+    },
+    "sol_icp_poc_frontend": {
+      "type": "assets",
+      "source": ["src/sol_icp_poc_frontend/assets"]
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}

@@ -1,0 +1,8 @@
+{
+  "name": "sol_icp_poc",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static frontend assets are ESM and do not require bundling.'"
+  }
+}
